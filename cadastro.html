@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avalia 360 - Cadastro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="fade-in">
+        <div class="menu-dropdown">
+            <button class="dropbtn">
+                <i class="fas fa-bars"></i> Menu
+            </button>
+            <div class="dropdown-content">
+                <a href="index.html"><i class="fas fa-home"></i> Página Inicial</a>
+                <a href="avaliacoes.html"><i class="fas fa-star"></i> Minhas Avaliações</a>
+                <a href="perfil.html"><i class="fas fa-user"></i> Meu Perfil</a>
+                <a href="avaliacao.html"><i class="fas fa-edit"></i> Fazer Avaliação</a>
+                <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+                <a href="cadastro.html"><i class="fas fa-user-plus"></i> Cadastre-se</a>
+            </div>
+        </div>
+        
+        <div class="header-title">
+            <h1>Avalia 360</h1>
+            <p>Sua opinião transforma empresas</p>
+        </div>
+        
+        <a href="index.html" class="logo-link">
+            <img src="img/360_logo.jpg" alt="Logo Avalia 360" class="logo">
+        </a>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h2>Cadastre-se</h2>
+            <form id="cadastroForm">
+                <div class="form-group">
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmarSenha">Confirmar senha:</label>
+                    <input type="password" id="confirmarSenha" name="confirmarSenha" required>
+                </div>
+
+                <button type="submit">Cadastrar</button>
+                <p>Já tem uma conta? <a href="login.html">Faça login</a></p>
+            </form>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

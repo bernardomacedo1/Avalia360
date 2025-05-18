@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avalia 360 - Plataforma de Avaliação de Empresas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="fade-in">
+        <div class="menu-dropdown">
+            <button class="dropbtn">
+                <i class="fas fa-bars"></i> Menu
+            </button>
+            <div class="dropdown-content">
+                <a href="index.html"><i class="fas fa-home"></i> Página Inicial</a>
+                <a href="avaliacoes.html"><i class="fas fa-star"></i> Minhas Avaliações</a>
+                <a href="perfil.html"><i class="fas fa-user"></i> Meu Perfil</a>
+                <a href="avaliacao.html"><i class="fas fa-edit"></i> Fazer Avaliação</a>
+                <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+                <a href="cadastro.html"><i class="fas fa-user-plus"></i> Cadastre-se</a>
+            </div>
+        </div>
+        
+        <div class="header-title">
+            <h1>Avalia 360</h1>
+            <p>Sua opinião transforma empresas</p>
+        </div>
+        
+        <a href="index.html" class="logo-link">
+            <img src="img/360_logo.jpg" alt="Logo Avalia 360" class="logo">
+        </a>
+    </header>
+
+    <main>
+        <section id="sobre" class="fade-in">
+            <h2><i class="fas fa-info-circle"></i> Sobre Nós</h2>
+            <div class="about-content">
+                <p>O Avalia 360 é a plataforma líder em avaliação de empresas, conectando consumidores e empresas para promover melhorias contínuas nos serviços oferecidos.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Transparência</h3>
+                        <p>Avaliações autênticas e verificadas para você tomar decisões conscientes.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-comments"></i>
+                        <h3>Diálogo</h3>
+                        <p>Espaço para empresas responderem e se comprometerem com melhorias.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Impacto Real</h3>
+                        <p>Sua avaliação ajuda outras pessoas e incentiva melhorias nos serviços.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="como-funciona" class="fade-in">
+            <h2><i class="fas fa-cogs"></i> Como Funciona</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Cadastre-se</h3>
+                    <p>Crie sua conta em menos de 1 minuto. É rápido, simples e gratuito.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Avalie</h3>
+                    <p>Compartilhe sua experiência com empresas e serviços que utilizou.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Acompanhe</h3>
+                    <p>Veja as respostas das empresas e o impacto da sua avaliação.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="avaliacoes" class="fade-in">
+            <h2><i class="fas fa-star"></i> Avaliações Recentes</h2>
+            <div class="carousel">
+                <button class="carousel-control prev"><i class="fas fa-chevron-left"></i></button>
+                
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <h3>Loja de Eletrônicos TechNow</h3>
+                                <div class="rating">★★★★★ <span>5/5</span></div>
+                            </div>
+                            <p class="review-text">"Comprei um notebook e o produto chegou antes do prazo, muito bem embalado e funcionando perfeitamente. Atendimento excelente!"</p>
+                            <p class="review-author">- Ana Carolina</p>
+                            <p class="review-date">Postado em: 15/06/2024</p>
+                            <div class="company-response">
+                                <h4><i class="fas fa-reply"></i> Resposta da empresa:</h4>
+                                <p>"Obrigado pelo feedback, Ana! Ficamos felizes que tenha tido uma boa experiência conosco."</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <h3>Restaurante Sabor Caseiro</h3>
+                                <div class="rating">★★★☆☆ <span>3/5</span></div>
+                            </div>
+                            <p class="review-text">"A comida era boa, mas o atendimento foi muito lento. Ficamos esperando mais de 40 minutos pelo prato principal."</p>
+                            <p class="review-author">- Carlos Eduardo</p>
+                            <p class="review-date">Postado em: 10/06/2024</p>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <h3>Clínica Médica Saúde Total</h3>
+                                <div class="rating">★★★★☆ <span>4/5</span></div>
+                            </div>
+                            <p class="review-text">"Profissionais muito atenciosos e competentes. Minha única crítica é a demora no agendamento de consultas."</p>
+                            <p class="review-author">- Mariana Santos</p>
+                            <p class="review-date">Postado em: 05/06/2024</p>
+                            <div class="company-response">
+                                <h4><i class="fas fa-reply"></i> Resposta da empresa:</h4>
+                                <p>"Agradecemos seu feedback. Estamos trabalhando para reduzir os prazos de agendamento."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-control next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section id="cta" class="fade-in">
+            <h2><i class="fas fa-rocket"></i> Pronto para fazer parte?</h2>
+            <div class="cta-container">
+                <p>Junte-se a milhares de consumidores que estão transformando o mercado com suas opiniões.</p>
+                
+                <div class="cta-buttons">
+                    <a href="cadastro.html" class="btn btn-cta">
+                        <i class="fas fa-user-plus"></i> Cadastre-se Gratuitamente
+                    </a>
+                    <a href="login.html" class="btn btn-cta btn-secondary">
+                        <i class="fas fa-sign-in-alt"></i> Fazer Login
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

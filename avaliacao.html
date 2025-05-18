@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avalia 360 - Fazer Avaliação</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="fade-in">
+        <div class="menu-dropdown">
+            <button class="dropbtn">
+                <i class="fas fa-bars"></i> Menu
+            </button>
+            <div class="dropdown-content">
+                <a href="index.html"><i class="fas fa-home"></i> Página Inicial</a>
+                <a href="avaliacoes.html"><i class="fas fa-star"></i> Minhas Avaliações</a>
+                <a href="perfil.html"><i class="fas fa-user"></i> Meu Perfil</a>
+                <a href="avaliacao.html"><i class="fas fa-edit"></i> Fazer Avaliação</a>
+                <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+                <a href="cadastro.html"><i class="fas fa-user-plus"></i> Cadastre-se</a>
+            </div>
+        </div>
+        
+        <div class="header-title">
+            <h1>Avalia 360</h1>
+            <p>Sua opinião transforma empresas</p>
+        </div>
+        
+        <a href="index.html" class="logo-link">
+            <img src="img/360_logo.jpg" alt="Logo Avalia 360" class="logo">
+        </a>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h2>Deixe sua avaliação</h2>
+            <form id="formAvaliacao">
+                <div class="form-group">
+                    <label for="empresa">Nome da empresa ou produto:</label>
+                    <input type="text" id="empresa" name="empresa" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="experiencia">Descreva sua experiência:</label>
+                    <textarea id="experiencia" name="experiencia" rows="5" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="midia">Adicione fotos/vídeos (opcional):</label>
+                    <input type="file" id="midia" name="midia" accept="image/*,video/*" multiple>
+                </div>
+
+                <div class="form-group">
+                    <label for="nota">Nota (0 a 5):</label>
+                    <input type="range" id="nota" name="nota" min="0" max="5" step="0.5" value="2.5" class="rating-slider">
+                    <div class="rating-labels">
+                        <span>0</span>
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                    </div>
+                    <div id="rating-value">Nota selecionada: 2.5</div>
+                </div>
+
+                <button type="submit">Enviar Avaliação</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
