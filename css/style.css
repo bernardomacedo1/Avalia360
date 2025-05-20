@@ -1,4 +1,4 @@
-/* Fontes e tamanhos */
+
 :root {
     --font-primary: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
     --font-size-base: 1.3rem;
@@ -6,7 +6,7 @@
     --font-size-xl: 2.0rem;  
     --font-size-xxl: 2.8rem; 
     
-    /* Cores */
+
     --dark-blue: #0C212C;
     --medium-blue: #0F4C75;
     --light-blue: #3282B8;
@@ -25,17 +25,16 @@
 body {
     font-family: var(--font-primary);
     font-size: var(--font-size-base);
-    line-height: 1.7; /* Aumentado de 1.6 */
+    line-height: 1.7;
     color: #333;
     background-color: var(--very-light-blue);
-    text-align: left; /* Alinhamento padrão à esquerda */
+    text-align: left;
 }
 
-/* Header */
 header {
     background-color: var(--medium-blue);
     color: var(--white);
-    padding: 1.8rem 2.5rem; /* Aumentado */
+    padding: 1.8rem 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,9 +45,9 @@ header {
 .header-title {
     display: flex;
     align-items: baseline;
-    gap: 1.5rem; /* Aumentado */
+    gap: 1.5rem;
     text-align: center;
-    margin: 0 auto; /* Centraliza o título */
+    margin: 0 auto;
 }
 
 .header-title h1 {
@@ -64,7 +63,7 @@ header {
 }
 
 .logo {
-    height: 4rem; /* Aumentado */
+    height: 4rem;
     transition: transform 0.3s;
 }
 
@@ -72,7 +71,6 @@ header {
     transform: scale(1.05);
 }
 
-/* Menu Dropdown */
 .menu-dropdown {
     position: relative;
     margin-right: auto;
@@ -81,14 +79,14 @@ header {
 .dropbtn {
     background-color: var(--dark-blue);
     color: white;
-    padding: 0.9rem 1.8rem; /* Aumentado */
+    padding: 0.9rem 1.8rem;
     font-size: var(--font-size-base);
     border: none;
     border-radius: 50px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 0.8rem; /* Aumentado */
+    gap: 0.8rem;
     transition: all 0.3s ease;
 }
 
@@ -101,7 +99,7 @@ header {
     display: none;
     position: absolute;
     background-color: var(--white);
-    min-width: 240px; /* Aumentado */
+    min-width: 240px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     border-radius: 8px;
     z-index: 100;
@@ -118,7 +116,7 @@ header {
 
 .dropdown-content a {
     color: var(--dark-blue);
-    padding: 0.9rem 1.2rem; /* Aumentado */
+    padding: 0.9rem 1.2rem;
     text-decoration: none;
     display: block;
     transition: background-color 0.2s;
@@ -132,21 +130,20 @@ header {
 
 .dropdown-content a:hover {
     background-color: var(--very-light-blue);
-    padding-left: 1.5rem; /* Aumentado */
+    padding-left: 1.5rem;
 }
 
-/* Conteúdo Principal */
 main {
-    padding: 2.5rem; /* Aumentado */
+    padding: 2.5rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 section {
     background-color: var(--white);
-    padding: 2.5rem; /* Aumentado */
-    margin: 2rem 0; /* Aumentado */
-    border-radius: 12px; /* Aumentado */
+    padding: 2.5rem;
+    margin: 2rem 0;
+    border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -154,24 +151,24 @@ section {
 h2 {
     font-size: var(--font-size-xl);
     color: var(--dark-blue);
-    margin-bottom: 2rem; /* Aumentado */
+    margin-bottom: 2rem;
     font-weight: 600;
-    text-align: center; /* Centraliza títulos */
+    text-align: center;
 }
 
-/* Formulários */
+
 .form-container {
-    max-width: 700px; /* Aumentado */
+    max-width: 700px;
     margin: 0 auto;
 }
 
 .form-group {
-    margin-bottom: 2rem; /* Aumentado */
+    margin-bottom: 2rem;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 0.8rem; /* Aumentado */
+    margin-bottom: 0.8rem;
     font-weight: 500;
     color: var(--dark-blue);
     font-size: var(--font-size-base);
@@ -179,10 +176,10 @@ h2 {
 
 .form-control {
     width: 100%;
-    padding: 1rem 1.2rem; /* Aumentado */
+    padding: 1rem 1.2rem;
     font-size: var(--font-size-base);
     border: 1px solid #ddd;
-    border-radius: 8px; /* Aumentado */
+    border-radius: 8px;
     transition: border-color 0.3s;
 }
 
@@ -193,16 +190,16 @@ h2 {
 }
 
 textarea.form-control {
-    min-height: 150px; /* Aumentado */
+    min-height: 150px;
     resize: vertical;
 }
 
-/* Botões */
+
 .btn {
     display: inline-block;
     background-color: var(--medium-blue);
     color: white;
-    padding: 1rem 2rem; /* Aumentado */
+    padding: 1rem 2rem;
     border: none;
     border-radius: 50px;
     font-size: var(--font-size-base);
@@ -223,16 +220,16 @@ textarea.form-control {
 }
 
 .btn-cta {
-    padding: 1.2rem 2.5rem; /* Aumentado */
+    padding: 1.2rem 2.5rem;
     font-size: var(--font-size-lg);
 }
 
-/* Carrossel */
+
 .carousel {
     position: relative;
     overflow: hidden;
-    border-radius: 12px; /* Aumentado */
-    margin: 2rem 0; /* Aumentado */
+    border-radius: 12px;
+    margin: 2rem 0;
 }
 
 .carousel-inner {
@@ -242,7 +239,7 @@ textarea.form-control {
 
 .carousel-item {
     min-width: 100%;
-    padding: 1.5rem; /* Aumentado */
+    padding: 1.5rem;
     box-sizing: border-box;
 }
 
@@ -250,11 +247,11 @@ textarea.form-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(15, 76, 117, 0.9); /* Mais visível */
+    background-color: rgba(15, 76, 117, 0.9);
     color: white;
     border: none;
-    width: 50px; /* Aumentado */
-    height: 50px; /* Aumentado */
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     cursor: pointer;
     z-index: 10;
@@ -272,33 +269,33 @@ textarea.form-control {
 }
 
 .carousel-control.prev {
-    left: 20px; /* Aumentado */
+    left: 20px;
 }
 
 .carousel-control.next {
-    right: 20px; /* Aumentado */
+    right: 20px;
 }
 
 .carousel-control.hidden {
     visibility: hidden;
 }
 
-/* Cards */
+
 .review-card {
     background-color: var(--gray-light);
-    padding: 2rem; /* Aumentado */
-    border-radius: 10px; /* Aumentado */
-    border-left: 5px solid var(--light-blue); /* Aumentado */
-    margin: 1rem; /* Aumentado */
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 5px solid var(--light-blue);
+    margin: 1rem;
 }
 
 .review-header {
-    margin-bottom: 1.5rem; /* Aumentado */
+    margin-bottom: 1.5rem;
 }
 
 .review-text {
-    margin: 1.5rem 0; /* Aumentado */
-    line-height: 1.8; /* Aumentado */
+    margin: 1.5rem 0;
+    line-height: 1.8;
     font-size: var(--font-size-base);
 }
 
@@ -307,37 +304,37 @@ textarea.form-control {
 }
 
 .company-response {
-    margin-top: 1.5rem; /* Aumentado */
-    padding-top: 1.5rem; /* Aumentado */
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
     border-top: 1px dashed var(--light-blue);
 }
 
-/* Perfil */
+
 .profile-picture {
-    width: 120px; /* Aumentado */
-    height: 120px; /* Aumentado */
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    margin: 0 auto 2rem; /* Aumentado */
+    margin: 0 auto 2rem;
     display: block;
     object-fit: cover;
-    border: 3px solid var(--light-blue); /* Adicionado */
+    border: 3px solid var(--light-blue);
 }
 
 .profile-details {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem; /* Aumentado */
-    margin-bottom: 2rem; /* Aumentado */
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .detail-group {
     background-color: var(--gray-light);
-    padding: 1.5rem; /* Aumentado */
+    padding: 1.5rem;
     border-radius: 8px;
 }
 
 .detail-item {
-    margin: 1rem 0; /* Aumentado */
+    margin: 1rem 0;
     display: flex;
     justify-content: space-between;
 }
@@ -367,15 +364,15 @@ textarea.form-control {
     
     header {
         flex-direction: column;
-        gap: 1.5rem; /* Aumentado */
-        padding: 1.5rem; /* Aumentado */
+        gap: 1.5rem;
+        padding: 1.5rem;
     }
     
     .header-title {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 0.8rem; /* Aumentado */
+        gap: 0.8rem;
     }
     
     .menu-dropdown {
@@ -393,7 +390,7 @@ textarea.form-control {
     }
     
     section {
-        padding: 1.8rem; /* Aumentado */
+        padding: 1.8rem;
     }
     
     .profile-details {
@@ -401,7 +398,7 @@ textarea.form-control {
     }
 }
 
-/* Animações */
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -411,7 +408,7 @@ textarea.form-control {
     animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Elementos específicos do index */
+
 .about-content {
     text-align: center;
     max-width: 800px;
