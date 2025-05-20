@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicializa todos os carrosseis
+// carrossel
     const carousels = document.querySelectorAll('.carousel');
-    
     carousels.forEach(carousel => {
         const inner = carousel.querySelector('.carousel-inner');
         const items = carousel.querySelectorAll('.carousel-item');
@@ -14,103 +13,111 @@ document.addEventListener('DOMContentLoaded', function() {
         function updateCarousel() {
             inner.style.transform = `translateX(-${currentIndex * 100}%)`;
             
-            // Esconde botões quando necessário
-            if (currentIndex === 0) {
-                prevBtn.classList.add('hidden');
-            } else {
-                prevBtn.classList.remove('hidden');
-            }
-            
-            if (currentIndex >= itemCount - 1) {
-                nextBtn.classList.add('hidden');
-            } else {
-                nextBtn.classList.remove('hidden');
-            }
+            if (prevBtn) prevBtn.classList.toggle('hidden', currentIndex === 0);
+            if (nextBtn) nextBtn.classList.toggle('hidden', currentIndex >= itemCount - 1);
         }
         
-        // Botão próximo
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                if (currentIndex < itemCount - 1) {
-                    currentIndex++;
-                    updateCarousel();
-                }
-            });
-        }
+        if (nextBtn) nextBtn.addEventListener('click', () => currentIndex < itemCount - 1 && ++currentIndex && updateCarousel());
+        if (prevBtn) prevBtn.addEventListener('click', () => currentIndex > 0 && --currentIndex && updateCarousel());
         
-        // Botão anterior
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateCarousel();
-                }
-            });
-        }
-        
-        // Inicializa
         updateCarousel();
     });
-    
-    // Sistema de Login/Cadastro
-    const loginForm = document.getElementById('loginForm');
-    const cadastroForm = document.getElementById('cadastroForm');
-    
-    if (loginForm) {
-        loginForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Simulação de login
-            alert('Login realizado com sucesso! Redirecionando...');
-            setTimeout(() => {
-                window.location.href = 'perfil.html';
-            }, 1000);
-        });
+
+// autenticaçao
+    function salvarUsuario(usuario) {
+        let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+        usuarios.push(usuario);
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
     }
-    
+
+    function verificarLogin(email, senha) {
+        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+        return usuarios.find(user => user.email === email && user.senha === senha);
+    }
+
+    function verificarSessao() {
+        return localStorage.getItem('usuarioLogado');
+    }
+
+    function logout() {
+        localStorage.removeItem('usuarioLogado');
+        window.location.href = 'index.html';
+    }
+
+//cadastro
+    const cadastroForm = document.getElementById('cadastroForm');
     if (cadastroForm) {
         cadastroForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
             const senha = document.getElementById('senha').value;
             const confirmarSenha = document.getElementById('confirmarSenha').value;
-            
-            if (senha !== confirmarSenha) {
-                alert('As senhas não coincidem!');
-                return;
-            }
-            
-            // Simulação de cadastro
-            alert('Cadastro realizado com sucesso! Bem-vindo ao Avalia 360.');
-            setTimeout(() => {
-                window.location.href = 'perfil.html';
-            }, 1000);
+
+            if (senha !== confirmarSenha) return alert('As senhas não coincidem!');
+
+            const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+            if (usuarios.some(user => user.email === email)) return alert('Este email já está cadastrado!');
+
+            const novoUsuario = {
+                nome: nome,
+                email: email,
+                senha: senha,
+                dataCadastro: new Date().toISOString()
+            };
+
+            salvarUsuario(novoUsuario);
+            localStorage.setItem('usuarioLogado', JSON.stringify(novoUsuario));
+            alert('Cadastro realizado com sucesso!');
+            window.location.href = 'perfil.html';
         });
     }
-    
-    // Logout
-    const logoutBtns = document.querySelectorAll('.logout-btn');
-    logoutBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            if (confirm('Deseja realmente sair da sua conta?')) {
-                alert('Você foi desconectado com sucesso.');
-                window.location.href = 'index.html';
+
+//login
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+
+            const usuario = verificarLogin(email, senha);
+            
+            if (usuario) {
+                localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
+                window.location.href = 'perfil.html';
+            } else {
+                alert('Email ou senha incorretos!');
             }
         });
-    });
-    
-    // Slider de avaliação
-    const ratingSlider = document.getElementById('nota');
-    const ratingValue = document.getElementById('rating-value');
-    
-    if (ratingSlider && ratingValue) {
-        ratingSlider.addEventListener('input', function() {
-            ratingValue.textContent = `Nota: ${this.value}/5`;
-            ratingValue.style.fontWeight = 'bold';
-            ratingValue.style.color = 
-                this.value < 2 ? 'var(--error-red)' : 
-                this.value < 4 ? '#FFA500' : '#4CAF50';
+    }
+
+//sair / logout
+    document.querySelectorAll('.logout-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (confirm('Deseja realmente sair da sua conta?')) logout();
         });
+    });
+
+//perfil
+    if (window.location.pathname.includes('perfil.html')) {
+        const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
         
-        // Dispara o evento para inicializar
-        ratingSlider.dispatchEvent(new Event('input'));
+        if (!usuarioLogado) return window.location.href = 'login.html';
+
+        document.querySelector('.profile-picture').alt = `Foto de ${usuarioLogado.nome}`;
+        document.getElementById('username').textContent = usuarioLogado.nome;
+        document.getElementById('email').textContent = usuarioLogado.email;
+        document.getElementById('data-cadastro').textContent = 
+            new Date(usuarioLogado.dataCadastro).toLocaleDateString('pt-BR');
+    }
+
+//verificar rotas
+    if (['perfil.html', 'avaliacao.html'].some(pagina => 
+        window.location.pathname.includes(pagina))) {
+        if (!verificarSessao()) window.location.href = 'login.html';
     }
 });
