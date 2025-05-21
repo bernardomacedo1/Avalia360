@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avalia 360 - Meu Perfil</title>
+    <title>Avalia 360 - Cadastro</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<header class="fade-in">
+    <header class="fade-in">
     <div class="menu-dropdown">
         <button class="dropbtn">
             <i class="fas fa-bars"></i> Menu
@@ -19,7 +19,6 @@
             <a href="perfil.html"><i class="fas fa-user"></i> Meu Perfil</a>
             <a href="avaliar.html"><i class="fas fa-edit"></i> Fazer Avaliação</a>
             <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
-            <a href="cadastro.html" id="cadastro-link"><i class="fas fa-user-plus"></i> Cadastre-se</a>
         </div>
     </div>
    
@@ -34,47 +33,40 @@
 </header>
 
     <main>
-        <section>
-            <h2>Meu Perfil</h2>
-            <img src="default-avatar.png" alt="Foto do perfil" class="profile-picture">
-            
-            <div class="form-container">
+        <section class="form-container">
+            <h2>Cadastre-se</h2>
+            <form id="cadastroForm">
                 <div class="form-group">
-                    <label>Nome:</label>
-                    <p id="username"></p>
-                </div>
-                
-                <div class="form-group">
-                    <label>E-mail:</label>
-                    <p id="email"></p>
-                </div>
-                
-                <div class="form-group">
-                    <label>Data de Cadastro:</label>
-                    <p id="data-cadastro"></p>
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" name="nome" class="form-control" required>
                 </div>
 
-                <button class="logout-btn">Sair da Conta</button>
-            </div>
-        </section>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
 
-        <section>
-            <h2>Minhas Avaliações Recentes</h2>
-            <div class="avaliacoes-container carrossel"></div>
-            <br>
-            <a href="avaliacoes.html" class="btn">Ver todas as avaliações</a>
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmarSenha">Confirmar senha:</label>
+                    <input type="password" id="confirmarSenha" name="confirmarSenha" class="form-control" required>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="termos-consumidor" required>
+                    <label for="termos-consumidor">Aceito os <a href="#">Termos de Uso</a></label>
+                </div>
+
+                <button type="submit" class="btn">Cadastrar</button>
+                <p>Já tem uma conta? <a href="login.html">Faça login</a></p>
+            </form>
         </section>
-        
     </main>
-<div id="cadastro-popup" class="popup-overlay">
-  <div class="popup-container">
-    <h3>Você é...</h3>
-    <div class="popup-options">
-      <button id="btn-consumidor" class="btn popup-btn">Consumidor</button>
-      <button id="btn-fornecedor" class="btn popup-btn">Fornecedor</button>
-    </div>
-  </div>
-</div>
+
     <script src="js/script.js"></script>
 </body>
 </html>

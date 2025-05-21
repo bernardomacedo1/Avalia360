@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avalia 360 - Cadastro para Fornecedores</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="fade-in">
+    <div class="menu-dropdown">
+        <button class="dropbtn">
+            <i class="fas fa-bars"></i> Menu
+        </button>
+        <div class="dropdown-content">
+            <a href="index.html"><i class="fas fa-home"></i> Página Inicial</a>
+            <a href="avaliacoes.html"><i class="fas fa-star"></i> Minhas Avaliações</a>
+            <a href="perfil.html"><i class="fas fa-user"></i> Meu Perfil</a>
+            <a href="avaliar.html"><i class="fas fa-edit"></i> Fazer Avaliação</a>
+            <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </div>
+    </div>
+   
+    <div class="header-title">
+        <h1>Avalia 360</h1>
+        <p>Sua opinião transforma</p>
+    </div>
+   
+    <a href="index.html" class="logo-link">
+        <img src="img/360_logo.jpg" alt="Logo Avalia 360" class="logo">
+    </a>
+</header>
+
+    <main>
+        <section class="form-container">
+    <h2>Cadastro para Fornecedores</h2>
+    <form id="cadastroFornecedorForm">
+        <h3>Dados da Empresa</h3>
+        <div class="form-group">
+            <label for="nome-empresa">Nome da Empresa:</label>
+            <input type="text" id="nome-empresa" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="cnpj">CNPJ:</label>
+            <input type="text" id="cnpj" class="form-control" placeholder="00.000.000/0000-00" required>
+        </div>
+
+        <h3>Dados do Responsável</h3>
+        <div class="form-group">
+            <label for="nome-responsavel">Nome Completo:</label>
+            <input type="text" id="nome-responsavel" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email-responsavel">E-mail:</label>
+            <input type="email" id="email-responsavel" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmar-email">Confirmar E-mail:</label>
+            <input type="email" id="confirmar-email" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="senha-fornecedor">Senha:</label>
+            <input type="password" id="senha-fornecedor" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmar-senha-fornecedor">Confirmar Senha:</label>
+            <input type="password" id="confirmar-senha-fornecedor" class="form-control" required>
+        </div>
+
+        <div class="form-group checkbox-group">
+            <input type="checkbox" id="termos-fornecedor" required>
+            <label for="termos-fornecedor">Aceito os <a href="#" id="link-termos">Termos para Fornecedores</a></label>
+        </div>
+
+        <button type="submit" class="btn">Enviar Cadastro</button>
+        
+        <div id="mensagem-sucesso" style="display: none;">
+            <p>Seu cadastro será analisado. Aguarde uma resposta em até 5 dias úteis.</p>
+        </div>
+    </form>
+</section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

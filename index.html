@@ -9,29 +9,29 @@
 </head>
 <body>
     <header class="fade-in">
-        <div class="menu-dropdown">
-            <button class="dropbtn">
-                <i class="fas fa-bars"></i> Menu
-            </button>
-            <div class="dropdown-content">
-                <a href="index.html"><i class="fas fa-home"></i> Página Inicial</a>
-                <a href="avaliacoes.html"><i class="fas fa-star"></i> Minhas Avaliações</a>
-                <a href="perfil.html"><i class="fas fa-user"></i> Meu Perfil</a>
-                <a href="avaliar.html"><i class="fas fa-edit"></i> Fazer Avaliação</a>
-                <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
-                <a href="cadastro.html"><i class="fas fa-user-plus"></i> Cadastre-se</a>
-            </div>
+    <div class="menu-dropdown">
+        <button class="dropbtn">
+            <i class="fas fa-bars"></i> Menu
+        </button>
+        <div class="dropdown-content">
+            <a href="index.html"><i class="fas fa-home"></i> Página Inicial</a>
+            <a href="avaliacoes.html"><i class="fas fa-star"></i> Minhas Avaliações</a>
+            <a href="perfil.html"><i class="fas fa-user"></i> Meu Perfil</a>
+            <a href="avaliar.html"><i class="fas fa-edit"></i> Fazer Avaliação</a>
+            <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href="cadastro.html" id="cadastro-link"><i class="fas fa-user-plus"></i> Cadastre-se</a>
         </div>
-        
-        <div class="header-title">
-            <h1>Avalia 360</h1>
-            <p>Sua opinião transforma</p>
-        </div>
-        
-        <a href="index.html" class="logo-link">
-            <img src="img/360_logo.jpg" alt="Logo Avalia 360" class="logo">
-        </a>
-    </header>
+    </div>
+   
+    <div class="header-title">
+        <h1>Avalia 360</h1>
+        <p>Sua opinião transforma</p>
+    </div>
+   
+    <a href="index.html" class="logo-link">
+        <img src="img/360_logo.jpg" alt="Logo Avalia 360" class="logo">
+    </a>
+</header>
 
     <main>
         <section id="sobre" class="fade-in">
@@ -155,7 +155,15 @@
             </div>
         </section>
     </main>
-
+<div id="cadastro-popup" class="popup-overlay">
+  <div class="popup-container">
+    <h3>Você é...</h3>
+    <div class="popup-options">
+      <button id="btn-consumidor" class="btn popup-btn">Consumidor</button>
+      <button id="btn-fornecedor" class="btn popup-btn">Fornecedor</button>
+    </div>
+  </div>
+</div>
     <script src="js/script.js"></script>
 </body>
 </html>

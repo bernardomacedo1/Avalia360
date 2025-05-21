@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const ratingValue = document.getElementById('rating-value');
         if (notaSlider && ratingValue) {
             notaSlider.addEventListener('input', function() {
-                ratingValue.textContent = `Nota selecionada: ${this.value}`;
+                ratingValue.textContent = `Nota: ${this.value}`;
             });
         }
 
@@ -226,4 +226,119 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.pathname.includes(pagina))) {
         if (!verificarSessao()) window.location.href = 'login.html';
     }
+});
+
+//cadastro do fornecedor
+
+document.addEventListener('DOMContentLoaded', function() {
+    const cnpjInput = document.getElementById('cnpj');
+    if (cnpjInput) {
+        cnpjInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length > 2) {
+                value = value.substring(0, 2) + '.' + value.substring(2);
+            }
+            if (value.length > 6) {
+                value = value.substring(0, 6) + '.' + value.substring(6);
+            }
+            if (value.length > 10) {
+                value = value.substring(0, 10) + '/' + value.substring(10);
+            }
+            if (value.length > 15) {
+                value = value.substring(0, 15) + '-' + value.substring(15, 17);
+            }
+            
+            e.target.value = value;
+        });
+    }
+    const cadastroFornecedorForm = document.getElementById('cadastroFornecedorForm');
+    if (cadastroFornecedorForm) {
+        cadastroFornecedorForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email-responsavel').value;
+            const confirmarEmail = document.getElementById('confirmar-email').value;
+            const senha = document.getElementById('senha-fornecedor').value;
+            const confirmarSenha = document.getElementById('confirmar-senha-fornecedor').value;
+            const termosAceitos = document.getElementById('termos-fornecedor').checked;
+
+            if (email !== confirmarEmail) {
+                alert('Os e-mails não coincidem!');
+                return;
+            }
+
+            if (senha !== confirmarSenha) {
+                alert('As senhas não coincidem!');
+                return;
+            }
+
+            if (!termosAceitos) {
+                alert('Você deve aceitar os termos para fornecedores!');
+                return;
+            }
+            const fornecedor = {
+                tipo: 'fornecedor',
+                nomeEmpresa: document.getElementById('nome-empresa').value,
+                cnpj: document.getElementById('cnpj').value.replace(/\D/g, ''),
+                responsavel: {
+                    nome: document.getElementById('nome-responsavel').value,
+                    email: email
+                },
+                senha: senha,
+                dataCadastro: new Date().toISOString(),
+                status: 'pendente'
+            };
+
+            let fornecedores = JSON.parse(localStorage.getItem('fornecedores')) || [];
+            fornecedores.push(fornecedor);
+            localStorage.setItem('fornecedores', JSON.stringify(fornecedores));
+
+            document.getElementById('mensagem-sucesso').style.display = 'block';
+            cadastroFornecedorForm.reset();
+            
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 5000);
+        });
+    }
+    const linkTermos = document.getElementById('link-termos');
+    if (linkTermos) {
+        linkTermos.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Termos para Fornecedores:\n\n1. Todos os dados fornecidos serão verificados.\n2. A aprovação do cadastro está sujeita à análise.\n3. O uso da plataforma está condicionado às políticas estabelecidas.');
+        });
+    }
+});
+
+//popup!
+
+function showCadastroPopup(event) {
+  event.preventDefault();
+  document.getElementById('cadastro-popup').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function redirectToConsumidor() {
+  window.location.href = 'cadastro-consumidor.html';
+}
+function redirectToFornecedor() {
+  window.location.href = 'cadastro-fornecedor.html';
+}
+document.addEventListener('DOMContentLoaded', function() {
+  const cadastroLinks = document.querySelectorAll('.dropdown-content a[href="cadastro.html"]');
+  
+  cadastroLinks.forEach(link => {
+    link.addEventListener('click', showCadastroPopup);
+  });
+  
+  document.getElementById('btn-consumidor').addEventListener('click', redirectToConsumidor);
+  document.getElementById('btn-fornecedor').addEventListener('click', redirectToFornecedor);
+  
+  document.getElementById('cadastro-popup').addEventListener('click', function(event) {
+    if (event.target === this) {
+      this.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  });
 });
